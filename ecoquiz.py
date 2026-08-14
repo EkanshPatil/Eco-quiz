@@ -84,6 +84,11 @@ while run == True:
                         if quiz.current < 5:
                             quiz.create_buttons()
                     else:
+                        pygame.draw.rect(screen,"red",button.rect)
+                        text = font.render(button.text,True,"white")
+                        screen.blit(text,(button.rect.x+15,button.rect.y+10))
+                        pygame.display.update()
+                        pygame.time.delay(3000)
                         quiz.current += 1
                         if quiz.current <5:
                             quiz.create_buttons()
